@@ -9,14 +9,15 @@
 			<div class="panel-body">
 				
 				{{ Form::open(['route' => 'postDaftarKad', 'method' => 'post'])}}
-				<label>No Kad</label>
-				<input type="text" name="noKad" class="form-control" id="noKad" required="">
+				
+				{{ Form::label('No Kad', 'No Kad Usahawan') }}
+				{{ Form::text('noKad', '', ['class' => 'form-control', 'required' => 'true']) }}
 
-				<label>No KP Usahawan</label>
-				<input type="text" name="noKP" class="form-control" id="noKP" required="">			
+				{{ Form::label('No KP', 'No KP Usahawan') }}
+				{{ Form::text('noKP', '', ['class' => 'form-control', 'required' => 'true']) }}			
 
 				<br />
-				<input type="submit" value="Daftar" class="btn btn-primary">
+				{{ Form::submit('Daftar Kad', ['class' => 'btn btn-primary'])}}
 
 				{{ Form::close() }}		
 

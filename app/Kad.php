@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kad extends Model
 {
-	protected $primaryKey = ['noKad'];
-
+	protected $table = "kad";
+	
 	protected $fillable = ['noKad', 'pengusaha_id', 'status'];
 
+	public $timestamps = false;
+
 	public function pengusaha() {
-		return $this->hasOne('App\Pengusaha', 'pengusaha_id', 'id');
+		return $this->belongsTo('App\Pengusaha', 'pengusaha_id');
 	}    
 }

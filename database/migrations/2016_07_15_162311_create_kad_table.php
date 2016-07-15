@@ -13,8 +13,8 @@ class CreateKadTable extends Migration
     public function up()
     {
         Schema::create('Kad', function (Blueprint $table) {
-            $table->bigInteger('noKad');
-            $table->primary('noKad');
+            $table->increments('id');
+            $table->bigInteger('noKad', false, false);
             $table->string('pengusaha_id');
             $table->string('status');
         });

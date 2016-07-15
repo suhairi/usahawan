@@ -18,6 +18,8 @@ class KadController extends Controller
 
 	public function postDaftarKad(Request $request) {
 
+		// return $request->all();
+
 		$validation = Validator::make($request->all(), [
 			'noKad' => 'required|min:10',
 			'noKP'	=> 'required|size:12'
@@ -30,28 +32,30 @@ class KadController extends Controller
 		}
 
 		// 2 - Check noKP is belong to a Pengusaha
-
 		$pengusaha = Pengusaha::where('noKP', $request->noKP)
-					->get();
+					->first();
 
-		if($pengusaha->isEmpty()) {
+
+		if($pengusaha == null) {
 			Session::flash('error', 'No KP ini tidak didaftarkan sebagai usahawan.');
-			return $redirect('daftar/daftarKad')->withInput();
-		}
-
-
-		// 3 - Check wether the noKad already existed
-		$kad = Kad::where('noKad', $request->noKad)
-			->orWhere('noKP', $request->noKP)
-			->get();
-
-		if(!$kad->isEmpty()) {
-			Session::flash('error', 'Kad ini milik : ' . $kad->pengusaha->nama);
 			return redirect('daftar/daftarKad')->withInput();
 		}
 
-		if(Kad::create(['noKad' => $request->noKad, 'noKP' => $request->noKP])) {
-			Session::flash('success', 'Berjaya. Kad telah didaftarkan kepada ' . $kad->pengusaha->nama);			
+		// 3 - Check wether the noKad already existed
+		$kad = Kad::where('noKad', $request->noKad)
+			->get();
+
+		if(!$kad->isEmpty()) {
+			Session::flash('error', 'Gagal. Kad ini milik : ' . $pengusaha->nama);
+			return redirect('daftar/daftarKad')->withInput();
+		}
+
+		if(Kad::create([
+			'noKad' 		=> $request->noKad, 
+			'pengusaha_id' 	=> $pengusaha->id,
+			'status'		=> 'AKTIF'
+		])) {
+			Session::flash('success', 'Berjaya. Kad telah didaftarkan kepada ' . $pengusaha->nama);			
 		}
 
 		return $redirect('daftar/daftarKad');

@@ -56,7 +56,7 @@
                         </a>
                         @if(Auth::user()->role == "root")
                             <ul class="dropdown-menu" role="menu">  
-                                <li><a href="{{ url('daftar/daftarPengusaha') }}">Daftar Pengusaha</a></li>
+                                <li><a href="{{ url('daftar/daftarPengusaha') }}">Daftar Usahawan</a></li>
                                 <li><a href="{{ url('daftar/daftarKad') }}">Daftar Kad</a></li>
                             </ul>
                         @endif 
@@ -97,7 +97,7 @@
                 @endif
 
                 @if(Session::has('success'))
-                    <div class="alert alert-success">{{ Session::get('error') }}</div>                    
+                    <div class="alert alert-success">{{ Session::get('success') }}</div>                    
                 @endif
 
                 @yield('content')

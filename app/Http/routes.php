@@ -35,6 +35,13 @@ Route::group(['middleware' => 'auth'], function() {
 				'uses'	=> 'PengusahaController@daftarPengusaha'
 			]);
 
+			Route::post('daftarPengusaha', [
+				'as'	=> 'daftarPengusaha',
+				'uses'	=> 'PengusahaController@postDaftarPengusaha'
+			]);
+
+
+
 			Route::get('daftarKad', [
 				'as'	=> 'daftarKad',
 				'uses'	=> 'KadController@daftarKad'
