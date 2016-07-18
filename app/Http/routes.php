@@ -40,8 +40,6 @@ Route::group(['middleware' => 'auth'], function() {
 				'uses'	=> 'PengusahaController@postDaftarPengusaha'
 			]);
 
-
-
 			Route::get('daftarKad', [
 				'as'	=> 'daftarKad',
 				'uses'	=> 'KadController@daftarKad'
@@ -53,5 +51,15 @@ Route::group(['middleware' => 'auth'], function() {
 
 			]);
 		});
+
+		Route::get('/semakKad', 'SemakController@semakKad');
 	// }
+
+		Route::group(['prefix' => 'functions'], function() {
+
+			Route::get('searchNoKad', 'SearchController@searchNoKad');
+
+		});
+
+
 });

@@ -49,18 +49,23 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
+
+                @if (Auth::guest())
                     <li><a href="{{ url('/home') }}">Home</a></li>
+                @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Daftar<span class="caret"></span>
                         </a>
-                        @if(Auth::user()->role == "root")
+                        @if(Auth::user()->role == 'root')
                             <ul class="dropdown-menu" role="menu">  
                                 <li><a href="{{ url('daftar/daftarPengusaha') }}">Daftar Usahawan</a></li>
                                 <li><a href="{{ url('daftar/daftarKad') }}">Daftar Kad</a></li>
                             </ul>
                         @endif 
                     </li>
+                    <li><a href="{{ url('/semakKad') }}">Semak Kad</a></li>
+                @endif
                      
                 </ul>
                 
