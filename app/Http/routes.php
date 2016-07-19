@@ -61,5 +61,11 @@ Route::group(['middleware' => 'auth'], function() {
 
 		});
 
+		Route::group(['prefix' => 'laporan'], function() {
+
+			Route::get('umum', 'LaporanController@umum');
+
+		});
+
 
 });

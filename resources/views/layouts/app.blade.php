@@ -65,6 +65,19 @@
                         @endif 
                     </li>
                     <li><a href="{{ url('/semakKad') }}">Semak Kad</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Laporan<span class="caret"></span>
+                        </a>
+                        @if(Auth::user()->role == 'root')
+                            <ul class="dropdown-menu" role="menu">  
+                                <li><a href="#">Senarai Usahawan</a></li>
+                                <li><a href="{{ url('laporan/umum') }}">Laporan Umum</a></li>
+                                <li><a href="#">Ringkasan Prestasi Jualan</a></li>
+                            </ul>
+                        @endif 
+                    </li>
+                    <li><a href="#">Carian</a></li>
                 @endif
                      
                 </ul>
