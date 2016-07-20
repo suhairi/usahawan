@@ -53,6 +53,7 @@ Route::group(['middleware' => 'auth'], function() {
 		});
 
 		Route::get('/semakKad', 'SemakController@semakKad');
+		Route::post('/semakKad', 'SemakController@postSemakKad');
 	// }
 
 		Route::group(['prefix' => 'functions'], function() {
@@ -63,9 +64,21 @@ Route::group(['middleware' => 'auth'], function() {
 
 		Route::group(['prefix' => 'laporan'], function() {
 
+			Route::get('/senaraiUsahawan', 'SenaraiController@senarai');
 			Route::get('umum', 'LaporanController@umum');
 
+
 		});
+
+		Route::get('/carian', [
+			'as'	=> 'carian',
+			'uses'	=> 'CarianController@carian'
+		]);
+
+		Route::post('/caraian', [
+			'as'	=> 'carianPost',
+			'uses'	=> 'CarianController@postCarian'
+		]);
 
 
 });

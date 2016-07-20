@@ -173,9 +173,9 @@ function semakPemilikKad2(str)
 	xmlHttp.open("GET",url,true)
 	xmlHttp.send(null)
 
-	setTimeout(function() {
-		$("#noKad").val("");
-	}, 3000);
+	// setTimeout(function() {
+	// 	$("#noKad").val("");
+	// }, 3000);
 }
 
 

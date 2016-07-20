@@ -12,7 +12,7 @@
 			{{ Form::open() }}
 
 			{{ Form::label('No Kad', 'No Kad : ') }}
-			{{ Form::text('noKad', null, ['class' => 'form-control', 'maxlength' => '10', 'onchange' => 'semakPemilikKad(this.value)', 'onkeyup' => 'semakPemilikKad(this.value)']) }}
+			{{ Form::text('noKad', null, ['class' => 'form-control', 'id' => 'noKad', 'maxlength' => '10']) }}
 
 			{{ Form::close() }}	
 
@@ -25,14 +25,35 @@
 		<div class="panel panel-primary">
 			<div class="panel-heading"><h3>Pemilik Kad</h3></div>
 			<div class="panel-body">
-				<div class="searchSemak"></div>
-
-				
-
+				<div id="searchSemak"></div>
 			</div>
 		</div>
 	</div>
 
 </div>
+
+
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$('#noKad').focus();
+
+		$('#noKad').change(function() {
+
+			$.ajax({
+				type: "POST",
+				url: "{{ url('/semakKad') }}",
+				data: "_token = {{ csrf_token() }}",
+				success: function(data) {
+					alert('here');
+					$("#searchSemak").html(data.msg);
+				}
+
+			});
+		});
+	});
+
+
+</script>
 
 @stop

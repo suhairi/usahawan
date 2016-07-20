@@ -8,7 +8,7 @@
 			<div class="panel-heading"><h3>Daftar Kad</h3></div>
 			<div class="panel-body">
 				
-				{{ Form::open(['route' => 'postDaftarKad', 'method' => 'post'])}}
+				{{ Form::open(['route' => 'postDaftarKad', 'method' => 'post']) }}
 				
 				{{ Form::label('No Kad', 'No Kad Usahawan') }}
 				{{ Form::text('noKad', '', ['class' => 'form-control', 'required' => 'true']) }}

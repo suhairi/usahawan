@@ -8,14 +8,17 @@
     <title>Sistem e-Usahawan</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('fonts/Lato-Medium.ttf') }}" >
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
-    <script src="js/clienthint.js"></script>
+    <!-- JavaScripts -->
+    <script src="{{ asset('js/clienthint.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}" crossorigin="anonymous"></script>
 
     <style>
         body {
@@ -71,13 +74,13 @@
                         </a>
                         @if(Auth::user()->role == 'root')
                             <ul class="dropdown-menu" role="menu">  
-                                <li><a href="#">Senarai Usahawan</a></li>
+                                <li><a href="{{ url('laporan/senaraiUsahawan') }}">Senarai Usahawan</a></li>
                                 <li><a href="{{ url('laporan/umum') }}">Laporan Umum</a></li>
                                 <li><a href="#">Ringkasan Prestasi Jualan</a></li>
                             </ul>
                         @endif 
                     </li>
-                    <li><a href="#">Carian</a></li>
+                    <li><a href="{{ url('/carian') }}">Carian</a></li>
                 @endif
                      
                 </ul>
@@ -126,9 +129,7 @@
 
     
 
-    <!-- JavaScripts -->
-    <script src="/js/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     
 </body>

@@ -12,4 +12,9 @@ class SemakController extends Controller
 
     	return View('semakKad');
     }
+
+    public function postSemakKad() {
+
+    	console.log('postSemakKad');
+    }
 }

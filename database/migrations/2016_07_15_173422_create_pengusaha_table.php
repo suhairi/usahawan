@@ -14,6 +14,7 @@ class CreatePengusahaTable extends Migration
     {
         Schema::create('pengusaha', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('foto');
             $table->string('noKP');
             $table->string('nama');
             $table->string('jantina');

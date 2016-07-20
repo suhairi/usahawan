@@ -9,6 +9,10 @@
 			<div class="panel-body">
 
 				{{ Form::open() }}
+
+					{{ Form::label('Gambar', 'Gambar Foto Usahawan') }}
+					{{ Form::file('foto', ['class' => 'form-control']) }}
+
 					{{ Form::label('No KP', '*No KP Usahawan') }}
 					{{ Form::text('noKP', '', ['class' => 'form-control', 'required' => 'true']) }}
 
