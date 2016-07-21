@@ -58,6 +58,6 @@ class KadController extends Controller
 			Session::flash('success', 'Berjaya. Kad telah didaftarkan kepada ' . $pengusaha->nama);			
 		}
 
-		return $redirect('daftar/daftarKad');
+		return redirect('daftar/daftarKad');
 	}  
 }

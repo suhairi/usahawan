@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Kad;
 
 class Pengusaha extends Model
 {
@@ -10,7 +11,7 @@ class Pengusaha extends Model
     public $table = 'pengusaha';
 
     protected $fillable = [
-    	'noKP', 'nama', 'jantina', 'noTel', 'pendidikan', 'institusiPendidikan', 'bidangPengajian',
+    	'foto', 'noKP', 'nama', 'jantina', 'noTel', 'pendidikan', 'institusiPendidikan', 'bidangPengajian',
     	'bangsa', 'warganegara', 'perkahwinan', 'alamat', 'dun', 'perlimen', 'daerah', 'statusAhliPPK',
     	'ppk'
     ];
@@ -18,10 +19,18 @@ class Pengusaha extends Model
     public $timestamps = false;
 
     public function Ppk() {
-    	return $this->hasOne('App\Ppk', 'ppk', 'id');
+    	return $this->hasOne('App\Ppk', 'id', 'ppk');
     }
 
     public function pendidikan() {
     	return $this->hasOne('App\Pendidikan', 'pendidikan', 'id');
+    }
+
+    public function kad($id) {
+
+        $kad = null;
+        $kad = Kad::where('pengusaha_id', $id)->first();
+
+        return $kad;
     }
 }

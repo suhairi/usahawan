@@ -11,7 +11,7 @@
 				{{ Form::open(['route' => 'postDaftarKad', 'method' => 'post']) }}
 				
 				{{ Form::label('No Kad', 'No Kad Usahawan') }}
-				{{ Form::text('noKad', '', ['class' => 'form-control', 'required' => 'true']) }}
+				{{ Form::text('noKad', '', ['class' => 'form-control', 'id' => 'noKad', 'required' => 'true']) }}
 
 				{{ Form::label('No KP', 'No KP Usahawan') }}
 				{{ Form::text('noKP', '', ['class' => 'form-control', 'required' => 'true']) }}			
@@ -26,6 +26,16 @@
 		</div>
 	</div>
 </div>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$('#noKad').focus();
+	});
+
+
+</script>
 
 
 

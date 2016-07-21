@@ -14,7 +14,6 @@
 							<th>Nama</th>
 							<th>No KP</th>
 							<th>Jantina</th>
-							<th>Dun</th>
 							<th>PPK</th>
 						</tr>
 					</thead>
@@ -27,8 +26,7 @@
 							<td>{{ $usahawan->nama }}</td>
 							<td>{{ $usahawan->noKP }}</td>
 							<td>{{ $usahawan->jantina }}</td>
-							<td>{{ $usahawan->dun }}</td>
-							<td>{{ $usahawan->ppk }}</td>
+							<td>{{ $usahawan->Ppk->kod }}</td>
 						</tr>
 
 						@endforeach

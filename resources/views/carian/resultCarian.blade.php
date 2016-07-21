@@ -31,6 +31,17 @@
 					<td>{{ $usahawan->noKP }}</td>
 				</tr>
 				<tr>
+					<td><strong>No Kad</strong></td>
+					<td>
+						@if(!empty($usahawan->Kad($usahawan->id)->noKad))
+							{{ $usahawan->Kad($usahawan->id)->noKad }}
+						@else
+							TIDAK MEMILIKI KAD
+						@endif
+					</td>
+				</tr>	
+
+				<tr>
 					<td><strong>Jantina</strong></td>
 					<td>{{ $usahawan->jantina }}</td>
 				</tr>
@@ -39,20 +50,12 @@
 					<td>{{ $usahawan->noTel }}</td>
 				</tr>
 				<tr>
-					<td><strong>Bangsa</strong></td>
-					<td>{{ $usahawan->bangsa }}</td>
-				</tr>
-				<tr>
 					<td><strong>Alamat</strong></td>
 					<td>{{ $usahawan->alamat }}</td>
 				</tr>
 				<tr>
-					<td><strong>Dun</strong></td>
-					<td>{{ $usahawan->alamat }}</td>
-				</tr>
-				<tr>
-					<td><strong>Parlimen</strong></td>
-					<td>{{ $usahawan->parlimen }}</td>
+					<td><strong>Ppk</strong></td>
+					<td>{{ $usahawan->Ppk->kod }}</td>
 				</tr>
 
 

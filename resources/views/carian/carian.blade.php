@@ -11,7 +11,10 @@
 				{{ Form::open(['route' => 'carianPost', 'method' => 'post']) }}
 
 				{{ Form::label('No kP', 'No Kad Pengenalan') }}
-				{{ Form::text('noKP', null, ['class' => 'form-control']) }}
+				{{ Form::text('noKP', null, ['class' => 'form-control', 'id' => 'noKP']) }}
+
+				<br />
+				{{ Form::submit('Carian', ['class' => 'btn btn-primary'])}}
 
 				{{ Form::close() }}
 			</div>
@@ -19,5 +22,12 @@
 	</div>
 </div>
 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#noKP').focus();
+	});
+
+
+</script>
 
 @stop

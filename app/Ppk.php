@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ppk extends Model
 {
-	protectec $table = "ppk";
+	protected $table = "ppk";
 	
-    public $fillable = ['kod', 'nama'];
+    public $fillable = ['kod', 'wilayah', 'nama'];
+
+    public $timestamps = false;
 }

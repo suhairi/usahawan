@@ -15,7 +15,8 @@ class CreatePpkTable extends Migration
         Schema::create('ppk', function (Blueprint $table) {
             $table->increments('id');
             $table->string('kod'); // A1, B1, A2, G4 .....
-            $table->string('name');
+            $table->smallInteger('wilayah');
+            $table->string('nama')->nullable();
         });
     }
 
@@ -24,8 +25,7 @@ class CreatePpkTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::drop('ppk');
     }
 }

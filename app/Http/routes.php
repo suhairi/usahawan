@@ -75,7 +75,7 @@ Route::group(['middleware' => 'auth'], function() {
 			'uses'	=> 'CarianController@carian'
 		]);
 
-		Route::post('/caraian', [
+		Route::post('/carian', [
 			'as'	=> 'carianPost',
 			'uses'	=> 'CarianController@postCarian'
 		]);

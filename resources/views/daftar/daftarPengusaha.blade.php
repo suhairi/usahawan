@@ -8,7 +8,7 @@
 			<div class="panel-heading"><h3>Daftar Usahawan</h3></div>
 			<div class="panel-body">
 
-				{{ Form::open() }}
+				{{ Form::open(['route' => 'daftarPengusaha', 'files' => true, 'method' => 'post']) }}
 
 					{{ Form::label('Gambar', 'Gambar Foto Usahawan') }}
 					{{ Form::file('foto', ['class' => 'form-control']) }}
@@ -24,6 +24,9 @@
 
 					{{ Form::label('No Tel', 'No Telefon Usahawan') }}
 					{{ Form::text('noTel', '', ['class' => 'form-control']) }}
+
+					{{ Form::label('PPK', '*PPK') }}
+					{{ Form::select('ppk', $ppk, '', ['class' => 'form-control', 'placeholder' => 'PPK   ']) }}
 
 					<br />
 					{{ Form::submit('Daftar Usahawan', ['class' => 'btn btn-primary']) }}

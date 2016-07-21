@@ -8,18 +8,25 @@ use App\Http\Requests;
 use Validator;
 use Session;
 use App\Pengusaha;
+use App\Ppk;
+use Illuminate\Support\Facades\Input;
+use Carbon\Carbon;
 
 class PengusahaController extends Controller
 {
     public function daftarPengusaha() {
-    	return View('daftar.daftarPengusaha');
+
+    	$ppk = Ppk::lists('kod', 'id');
+
+    	return View('daftar.daftarPengusaha', compact('ppk'));
     }
 
     public function postDaftarPengusaha(Request $request) {
 
     	$validation = Validator::make($request->all(), [
 			'noKP'	=> 'required|size:12',
-			'nama'	=> 'required'
+			'nama'	=> 'required',
+			'ppk'	=> 'required'
 		]);
 
 		if($validation->fails()) {
@@ -38,11 +45,28 @@ class PengusahaController extends Controller
 			return redirect('daftar/daftarPengusaha')->withInput();
 		}
 
+		// Process the image
+
+		$fileName = rand(1, 333) . '_' . rand(10000, 99999);
+
+		if(Input::file('foto')->isValid()) {
+
+			$destination = base_path() . "\public\images\profiles\\";
+			$extensions = Input::file('foto')->getClientOriginalExtension();
+			$fileName = $fileName . '.' .$extensions;
+			
+			Input::file('foto')->move($destination, $fileName);
+		}
+
+		// If all above success, then add into database
+
 		if(Pengusaha::create([
-			'noKP' 		=> $request->noKP, 
+			'noKP' 		=> $request->noKP,
+			'foto'		=> $fileName,
 			'nama' 		=> strtoupper($request->nama), 
 			'jantina' 	=> strtoupper($request->jantina), 
-			'noTel' 	=> strtoupper($request->noTel)
+			'noTel' 	=> strtoupper($request->noTel),
+			'ppk'		=> $request->ppk
 		])) {
 			Session::flash('success', 'Berjaya. No KP ' . $request->noKP . ' telah berjaya didaftarkan.');
 		}
