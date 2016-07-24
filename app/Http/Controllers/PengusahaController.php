@@ -45,6 +45,24 @@ class PengusahaController extends Controller
 			return redirect('daftar/daftarPengusaha')->withInput();
 		}
 
+		// Generate No Ahli
+
+		$ppk = Ppk::where('id', $request->ppk)
+				->first();		
+
+		$countUsahawan = Pengusaha::where('wilayah', $ppk->wilayah)->count();
+
+		$idUsahawan = '';
+
+		// ##############################
+		// Here is the snippet for TRIAL
+		// ##############################
+		if($countUsahawan < 10)
+			$idUsahawan = '000' . ($countUsahawan + 1);
+
+		$noAhli = "ME0" . $ppk->wilayah . ' - ' . $idUsahawan;
+
+
 		// Process the image
 
 		$fileName = rand(1, 333) . '_' . rand(10000, 99999);
@@ -62,6 +80,7 @@ class PengusahaController extends Controller
 
 		if(Pengusaha::create([
 			'noKP' 		=> $request->noKP,
+			'noAhli'	=> $noAhli,
 			'foto'		=> $fileName,
 			'nama' 		=> strtoupper($request->nama), 
 			'jantina' 	=> strtoupper($request->jantina), 

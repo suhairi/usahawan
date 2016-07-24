@@ -14,7 +14,7 @@
 				{{ Form::text('noKP', null, ['class' => 'form-control', 'id' => 'noKP']) }}
 
 				<br />
-				{{ Form::submit('Carian', ['class' => 'btn btn-primary'])}}
+				{{ Form::submit('Carian', ['class' => 'btn btn-primary']) }}
 
 				{{ Form::close() }}
 			</div>

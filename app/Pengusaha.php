@@ -11,9 +11,9 @@ class Pengusaha extends Model
     public $table = 'pengusaha';
 
     protected $fillable = [
-    	'foto', 'noKP', 'nama', 'jantina', 'noTel', 'pendidikan', 'institusiPendidikan', 'bidangPengajian',
+    	'foto', 'noKP', 'noAhli', 'nama', 'jantina', 'noTel', 'pendidikan', 'institusiPendidikan', 'bidangPengajian',
     	'bangsa', 'warganegara', 'perkahwinan', 'alamat', 'dun', 'perlimen', 'daerah', 'statusAhliPPK',
-    	'ppk'
+    	'ppk', 'wilayah'
     ];
 
     public $timestamps = false;

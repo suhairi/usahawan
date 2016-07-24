@@ -20,7 +20,15 @@
 		<div class="panel panel-body">
 			<table class="table table-condensed table-hover table-bordered">
 				<tr>
-					<td colspan="2"><img src="{{ asset('/images/profiles/' . $usahawan->foto) }}" height="150" width="150"><br /><br /></td>
+					<td colspan="2">
+
+					@if(!$usahawan->foto == '')
+						<img src="{{ asset('/images/profiles/' . $usahawan->foto) }}" height="150" width="150">
+					@else
+						<img src="{{ asset('/images/profiles/dummy.jpg') }}" height="150" width="150">
+					@endif
+					<br /><br />
+					</td>
 				</tr>
 				<tr>
 					<td><strong>Nama</strong></td>

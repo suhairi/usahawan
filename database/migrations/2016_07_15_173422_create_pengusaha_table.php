@@ -16,6 +16,7 @@ class CreatePengusahaTable extends Migration
             $table->increments('id');
             $table->string('foto');
             $table->string('noKP');
+            $table->string('noAhli');
             $table->string('nama');
             $table->string('jantina');
             $table->string('noTel');
@@ -31,6 +32,7 @@ class CreatePengusahaTable extends Migration
             $table->integer('daerah');
             $table->string('statusAhliPPK');
             $table->integer('ppk');
+            $table->integer('wilayah');
         });
     }
 
