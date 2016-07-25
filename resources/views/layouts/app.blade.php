@@ -60,7 +60,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Daftar<span class="caret"></span>
                         </a>
-                        @if(Auth::user()->role == 'root')
+                        @if(Auth::user()->role == 'root' || Auth::user()->role == 'clerk')
                             <ul class="dropdown-menu" role="menu">  
                                 <li><a href="{{ url('daftar/daftarPengusaha') }}">Daftar Usahawan</a></li>
                                 <li><a href="{{ url('daftar/daftarKad') }}">Daftar Kad</a></li>
@@ -72,7 +72,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             Laporan<span class="caret"></span>
                         </a>
-                        @if(Auth::user()->role == 'root')
+                        @if(Auth::user()->role == 'root' || Auth::user()->role == 'clerk')
                             <ul class="dropdown-menu" role="menu">  
                                 <li><a href="{{ url('laporan/senaraiUsahawan') }}">Senarai Usahawan</a></li>
                                 <li><a href="{{ url('laporan/umum') }}">Laporan Umum</a></li>
