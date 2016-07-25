@@ -13,6 +13,7 @@ class UsahawanTableSeeder extends Seeder
     public function run()
     {
         Pengusaha::create([
+            'foto'              => '01.jpg',
             'noKP'              => '840805025048',
             'noAhli'            => strtoupper('ME01 - 0001'),
             'nama'              => strtoupper('SHARIFAH BINTI ABDUL KARIM'),
@@ -24,6 +25,7 @@ class UsahawanTableSeeder extends Seeder
         ]);
 
         Pengusaha::create([
+            'foto'              => '02.jpg',
             'noKP'              => '870813025205',
             'noAhli'            => strtoupper('ME01 - 0002'),
             'nama'              => strtoupper('MOHD ZULKHAIRI BIN MOHD NOR'),
@@ -35,6 +37,7 @@ class UsahawanTableSeeder extends Seeder
         ]);
 
         Pengusaha::create([
+            'foto'              => '03.jpg',
             'noKP'              => '840321025412',
             'noAhli'            => strtoupper('ME02 - 0001'),
             'nama'              => strtoupper('MAZUREEN BT.HJ.NORDIN'),
@@ -42,10 +45,11 @@ class UsahawanTableSeeder extends Seeder
             'noTel'             => '0195692606',
             'statusAhliPpk'     => 'AKTIF',
             'ppk'               => 14, // PPK I2
-            'wilayah'           => '2'
+            'wilayah'           => 2
         ]);
 
         Pengusaha::create([
+            'foto'              => '04.jpg',
             'noKP'              => '850829025690',
             'noAhli'            => strtoupper('ME03 - 0001'),
             'nama'              => strtoupper('FAUZIAH BINTI JASNI'),
@@ -53,11 +57,12 @@ class UsahawanTableSeeder extends Seeder
             'noTel'             => '0134070342',
             'statusAhliPpk'     => 'AKTIF',
             'ppk'               => 19, // PPK E3
-            'wilayah'           => 2
+            'wilayah'           => 3
         ]);
 
         Pengusaha::create([
-    		'noKP' 		        => '900123025027',
+    		'foto'               => '05.jpg',
+            'noKP' 		        => '900123025027',
     		'noAhli'	        => strtoupper('ME04 - 0001'),
     		'nama' 		        => strtoupper('MUHAMMAD MUKHRI B MOHD NOOR'),
     		'jantina'	        => 'LELAKI',
