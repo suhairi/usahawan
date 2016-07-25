@@ -76,7 +76,7 @@
                             <ul class="dropdown-menu" role="menu">  
                                 <li><a href="{{ url('laporan/senaraiUsahawan') }}">Senarai Usahawan</a></li>
                                 <li><a href="{{ url('laporan/umum') }}">Laporan Umum</a></li>
-                                <li><a href="#">Ringkasan Prestasi Jualan</a></li>
+                                <!-- <li><a href="#">Ringkasan Prestasi Jualan</a></li> -->
                             </ul>
                         @endif 
                     </li>

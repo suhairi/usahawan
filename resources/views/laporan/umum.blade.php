@@ -56,23 +56,16 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 </style>
 
 <ul class="tab">
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'London')">Umur</a></li>
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'Paris')">Tahap Pendidikan</a></li>
-  <li><a href="#" class="tablinks" onclick="openCity(event, 'Tokyo')">Jantina</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'umur')">Umur</a></li>
+  <li><a href="#" class="tablinks" onclick="openCity(event, 'jantina')">Jantina</a></li>
 </ul>
 
-<div id="London" class="tabcontent">
+<div id="umur" class="tabcontent">
  	@include('laporan.includes._umur')
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Tahap Pendidikan</h3>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="tabcontent">
-  <h3>Jantina</h3>
-  <p>Tokyo is the capital of Japan.</p>
+<div id="jantina" class="tabcontent">
+  @include('laporan.includes._jantina')
 </div>
 
 
@@ -93,8 +86,8 @@ for (i = 0; i < tablinks.length; i++) {
 }
 
 // Show the current tab, and add an "active" class to the link that opened the tab
-document.getElementById("London").style.display = "block";
-document.getElementById("London") += " active";
+document.getElementById("umur").style.display = "block";
+document.getElementById("umur") += " active";
 
 function openCity(evt, cityName) {
     // Declare all variables

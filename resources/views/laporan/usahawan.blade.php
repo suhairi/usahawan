@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-	<div class="col-xs-8">
+	<div class="col-xs-10">
 		<div class="panel panel-primary">
 			<div class="panel panel-heading"><h3>Senarai Usahawan</h3></div>
 			<div class="panel panel-body">
@@ -13,8 +13,10 @@
 							<th>Bil</th>
 							<th>Nama</th>
 							<th>No KP</th>
+							<th>No Usahawan</th>
 							<th>Jantina</th>
 							<th>PPK</th>
+							<th>No Telefon</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -25,8 +27,10 @@
 							<td>{{ $bil++ }}</td>
 							<td>{{ $usahawan->nama }}</td>
 							<td>{{ $usahawan->noKP }}</td>
+							<td>{{ $usahawan->noAhli }}</td>
 							<td>{{ $usahawan->jantina }}</td>
 							<td>{{ $usahawan->Ppk->kod }}</td>
+							<td>{{ $usahawan->noTel }}</td>
 						</tr>
 
 						@endforeach
