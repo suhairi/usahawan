@@ -15,10 +15,12 @@
 </style>
 
 <div class="row">
-	<div class="panel panel-primary">
-		<div class="panel panel-heading"><h3>Maklumat No Kad Pengenalan</h3></div>
-		<div class="panel panel-body">
-			<table class="table table-condensed table-hover table-bordered">
+	<div class="col-xs-10">
+		<div class="panel panel-primary">
+			<div class="panel panel-heading"><h3>Maklumat Kad</h3></div>
+			<div class="panel panel-body">
+				
+				<table class="table table-condensed table-hover table-bordered">
 				<tr>
 					<td colspan="2">
 
@@ -65,9 +67,15 @@
 					<td><strong>Ppk</strong></td>
 					<td>{{ $usahawan->Ppk->kod }}</td>
 				</tr>
-			</table>
+
+			</div>
+
 		</div>
+
 	</div>
 </div>
+
+
+
 
 @stop
