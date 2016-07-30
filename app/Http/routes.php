@@ -65,7 +65,16 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::group(['prefix' => 'laporan'], function() {
 
 			Route::get('/senaraiUsahawan', 'SenaraiController@senarai');
-			Route::get('umum', 'LaporanController@umum');
+			Route::get('/umum', 'LaporanController@umum');
+			Route::get('/prestasi', 'LaporanController@prestasi');
+
+
+		});
+
+		Route::group(['prefix' => 'perkhidmatan'], function() {
+
+			Route::get('/penjual', 'PerkhidmatanController@penjual');
+			Route::get('/pembeli', 'PerkhidmatanController@pembeli');
 
 
 		});

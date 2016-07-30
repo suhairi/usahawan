@@ -35,6 +35,14 @@
 					<td>{{ $usahawan->nama }}</td>
 				</tr>
 				<tr>
+					<td><strong>Projek / Perusahaan</strong></td>
+					<td>{{ $usahawan->perusahaan }}</td>
+				</tr>
+				<tr>
+					<td><strong>Ppk</strong></td>
+					<td>{{ $usahawan->Ppk->kod }}</td>
+				</tr>
+				<tr>
 					<td><strong>No KP</strong></td>
 					<td>{{ $usahawan->noKP }}</td>
 				</tr>
@@ -61,10 +69,7 @@
 					<td><strong>Alamat</strong></td>
 					<td>{{ $usahawan->alamat }}</td>
 				</tr>
-				<tr>
-					<td><strong>Ppk</strong></td>
-					<td>{{ $usahawan->Ppk->kod }}</td>
-				</tr>
+				
 			</table>
 		</div>
 	</div>

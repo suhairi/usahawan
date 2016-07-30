@@ -10,13 +10,12 @@
 				<table class="table table-condensed table-hover table-striped">
 					<thead>
 						<tr>
-							<th>Bil</th>
-							<th>Nama</th>
-							<th>No KP</th>
-							<th>No Usahawan</th>
-							<th>Jantina</th>
+							<th>BIL</th>
 							<th>PPK</th>
-							<th>No Telefon</th>
+							<th>NAMA USAHAWAN</th>
+							<th>PROJEK / PERUSAHAAN</th>
+							<th>NO KP</th>
+							<th>NO TELEFON</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -25,11 +24,10 @@
 
 						<tr>
 							<td>{{ $bil++ }}</td>
-							<td>{{ $usahawan->nama }}</td>
-							<td>{{ $usahawan->noKP }}</td>
-							<td>{{ $usahawan->noAhli }}</td>
-							<td>{{ $usahawan->jantina }}</td>
 							<td>{{ $usahawan->Ppk->kod }}</td>
+							<td>{{ $usahawan->nama }}</td>
+							<td>{{ $usahawan->perusahaan }}</td>							
+							<td>{{ $usahawan->noKP }}</td>
 							<td>{{ $usahawan->noTel }}</td>
 						</tr>
 

@@ -21,7 +21,8 @@ class UsahawanTableSeeder extends Seeder
             'noTel'             => '0194295692',
             'statusAhliPpk'     => 'AKTIF',
             'ppk'               => 2, // PPK B1
-            'wilayah'           => 1
+            'wilayah'           => 1,
+            'perusahaan'        => 'AIR SARANG BURUNG'
         ]);
 
         Pengusaha::create([
@@ -33,19 +34,21 @@ class UsahawanTableSeeder extends Seeder
             'noTel'             => '0134361772',
             'statusAhliPpk'     => 'AKTIF',
             'ppk'               => 2,
-            'wilayah'           => 1
+            'wilayah'           => 1,
+            'perusahaan'        => 'MEE LIDI & SANGGUL'
         ]);
 
         Pengusaha::create([
             'foto'              => '03.jpg',
             'noKP'              => '840321025412',
             'noAhli'            => strtoupper('ME02 - 0001'),
-            'nama'              => strtoupper('MAZUREEN BT.HJ.NORDIN'),
+            'nama'              => strtoupper('MAZUREEN BT. HJ. NORDIN'),
             'jantina'           => 'PEREMPUAN',
             'noTel'             => '0195692606',
             'statusAhliPpk'     => 'AKTIF',
             'ppk'               => 14, // PPK I2
-            'wilayah'           => 2
+            'wilayah'           => 2,
+            'perusahaan'        => 'SERBUK KARI'
         ]);
 
         Pengusaha::create([
@@ -57,7 +60,8 @@ class UsahawanTableSeeder extends Seeder
             'noTel'             => '0134070342',
             'statusAhliPpk'     => 'AKTIF',
             'ppk'               => 19, // PPK E3
-            'wilayah'           => 3
+            'wilayah'           => 3,
+            'perusahaan'        => 'KUIH TRADISIONAL'
         ]);
 
         Pengusaha::create([
@@ -69,7 +73,8 @@ class UsahawanTableSeeder extends Seeder
     		'noTel'		        => '0174336904',
             'statusAhliPpk'     => 'AKTIF',
     		'ppk'		        => 27, // PPK G4
-    		'wilayah'	        => 4
+    		'wilayah'	        => 4,
+            'perusahaan'        => 'TAUHU'
 		]);
         
     }

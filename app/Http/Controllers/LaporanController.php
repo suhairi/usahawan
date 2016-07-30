@@ -86,6 +86,11 @@ class LaporanController extends Controller
     	return View('laporan.umum', compact('wilayah', 'jantina'));
     }
 
+    public function prestasi() {
+
+    	return View('laporan.prestasi');
+    }
+
     protected function checkAge($noKP) {
 
     	$currentYear = date('Y');

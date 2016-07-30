@@ -13,6 +13,7 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dropdown-submenu.css') }}">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <!-- JavaScripts -->
@@ -76,7 +77,29 @@
                             <ul class="dropdown-menu" role="menu">  
                                 <li><a href="{{ url('laporan/senaraiUsahawan') }}">Senarai Usahawan</a></li>
                                 <li><a href="{{ url('laporan/umum') }}">Laporan Umum</a></li>
+                                <li><a href="{{ url('laporan/prestasi') }}">Laporan Prestasi</a></li>
                                 <!-- <li><a href="#">Ringkasan Prestasi Jualan</a></li> -->
+                            </ul>
+                        @endif 
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Perkhidmatan<span class="caret"></span>
+                        </a>
+                        @if(Auth::user()->role == 'root' || Auth::user()->role == 'clerk')
+                            <ul class="dropdown-menu multilevel" role="menu">  
+                                <li class="dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Permohonan Bantuan<span class=""></span>
+                                    </a>
+                                    @if(Auth::user()->role == 'root' || Auth::user()->role == 'clerk')
+                                        <ul class="dropdown-menu" role="menu">  
+                                            <li><a href="#">Caw. IAT</a></li>
+                                            <li><a href="#">Caw. Bukan Padi</a></li>
+                                            <li><a href="#">Cawangan Pemasaran</a></li>
+                                        </ul>
+                                    @endif 
+                                </li>
+                                <li><a href="{{ url('/perkhidmatan/penjual') }}">Penjual</a></li>
+                                <li><a href="{{ url('/perkhidmatan/pembeli') }}">Pembeli</a></li>
                             </ul>
                         @endif 
                     </li>

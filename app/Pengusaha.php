@@ -13,7 +13,7 @@ class Pengusaha extends Model
     protected $fillable = [
     	'foto', 'noKP', 'noAhli', 'nama', 'jantina', 'noTel', 'pendidikan', 'institusiPendidikan', 'bidangPengajian',
     	'bangsa', 'warganegara', 'perkahwinan', 'alamat', 'dun', 'perlimen', 'daerah', 'statusAhliPPK',
-    	'ppk', 'wilayah'
+    	'ppk', 'wilayah', 'perusahaan'
     ];
 
     public $timestamps = false;

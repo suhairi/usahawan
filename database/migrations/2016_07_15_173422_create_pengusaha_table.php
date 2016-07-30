@@ -33,6 +33,7 @@ class CreatePengusahaTable extends Migration
             $table->string('statusAhliPPK');
             $table->integer('ppk');
             $table->integer('wilayah');
+            $table->string('perusahaan');
         });
     }
 
