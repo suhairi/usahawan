@@ -29,6 +29,18 @@
         .fa-btn {
             margin-right: 6px;
         }
+
+        body {
+            background-image: url("{{ asset('images/background.jpg') }}"); 
+        }
+
+        /* For devices 400px and larger: */
+        @media only screen and (min-device-width: 400px) {
+            body { 
+                background-image: url("{{ asset('images/background.jpg') }}"); 
+                background-size: cover;
+            }
+        }
     </style>
 </head>
 <body id="app-layout">
