@@ -13,6 +13,8 @@
 
 Route::get('/', function () {
 
+	// return Hash::make('mada1234');
+
 	if(Auth::guest())
 		return view('auth.login');
 	else
@@ -48,6 +50,17 @@ Route::group(['middleware' => 'auth'], function() {
 			Route::post('daftarKad', [
 				'as'	=> 'postDaftarKad',
 				'uses'	=> 'KadController@postDaftarKad'
+
+			]);
+
+			Route::get('daftarProgram', [
+				'as'	=> 'daftarProgram',
+				'uses'	=> 'ProgramController@daftarProgram'
+			]);
+
+			Route::post('daftarProgram', [
+				'as'	=> 'postDaftarProgram',
+				'uses'	=> 'ProgramController@postDaftarProgram'
 
 			]);
 		});
@@ -87,6 +100,16 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::post('/carian', [
 			'as'	=> 'carianPost',
 			'uses'	=> 'CarianController@postCarian'
+		]);
+
+		Route::get('/point', [
+			'as'	=> 'point',
+			'uses'	=> 'PointController@point'
+		]);
+
+		Route::post('/point', [
+			'as'	=> 'postPoint',
+			'uses'	=> 'PointController@postPoint'
 		]);
 
 

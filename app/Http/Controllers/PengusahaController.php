@@ -23,10 +23,12 @@ class PengusahaController extends Controller
 
     public function postDaftarPengusaha(Request $request) {
 
+    	// return $request->all();
     	$validation = Validator::make($request->all(), [
-			'noKP'	=> 'required|size:12',
-			'nama'	=> 'required',
-			'ppk'	=> 'required'
+			'noKP'			=> 'required|size:12',
+			'nama'			=> 'required',
+			'ppk'			=> 'required',
+			'perusahaan' 	=> 'required'
 		]);
 
 		if($validation->fails()) {
@@ -82,7 +84,9 @@ class PengusahaController extends Controller
 			'noKP' 		=> $request->noKP,
 			'noAhli'	=> $noAhli,
 			'foto'		=> $fileName,
-			'nama' 		=> strtoupper($request->nama), 
+			'nama' 		=> strtoupper($request->nama),
+			'alamat'	=> strtoupper($request->alamat),
+			'perusahaan'=> strtoupper($request->perusahaan),
 			'jantina' 	=> strtoupper($request->jantina), 
 			'noTel' 	=> strtoupper($request->noTel),
 			'ppk'		=> $request->ppk

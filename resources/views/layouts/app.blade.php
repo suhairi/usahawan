@@ -77,6 +77,7 @@
                             <ul class="dropdown-menu" role="menu">  
                                 <li><a href="{{ url('daftar/daftarPengusaha') }}">Daftar Usahawan</a></li>
                                 <li><a href="{{ url('daftar/daftarKad') }}">Daftar Kad</a></li>
+                                <li><a href="{{ url('daftar/daftarProgram') }}">Daftar Program</a></li>
                             </ul>
                         @endif 
                     </li>
@@ -116,6 +117,7 @@
                         @endif 
                     </li>
                     <li><a href="{{ url('/carian') }}">Carian</a></li>
+                    <li><a href="{{ url('/point') }}">Sistem Point Usahawan</a></li>
                 @endif
                      
                 </ul>

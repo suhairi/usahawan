@@ -19,8 +19,15 @@
 					{{ Form::label('Nama', '*Nama Usahawan') }}
 					{{ Form::text('nama', '', ['class' => 'form-control', 'required' => 'true']) }}
 
+					{{ Form::label('Nama Perusahaan', '*Nama Perusahaan') }}
+					{{ Form::text('perusahaan', '', ['class' => 'form-control', 'required' => 'true']) }}
+					
+
+					{{ Form::label('Nama', 'Alamat') }}
+					{{ Form::textarea('alamat', '', ['class' => 'form-control', 'required' => 'true']) }}
+
 					{{ Form::label('Jantina', 'Jantina') }}
-					{{ Form::select('jantina', ['LELAKI' => 'LELAKI', 'PEREMPUAN' => 'PEREMPUAN'], null, ['class' => 'form-control', 'placeholder' => 'JANTINA']) }}
+					{{ Form::select('jantina', ['LELAKI' => 'LELAKI', 'PEREMPUAN' => 'PEREMPUAN'], null, ['class' => 'form-control', 'placeholder' => 'JANTINA', 'rows' => 4]) }}
 
 					{{ Form::label('No Tel', 'No Telefon Usahawan') }}
 					{{ Form::text('noTel', '', ['class' => 'form-control']) }}

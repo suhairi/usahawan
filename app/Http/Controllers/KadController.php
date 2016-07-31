@@ -18,8 +18,6 @@ class KadController extends Controller
 
 	public function postDaftarKad(Request $request) {
 
-		// return $request->all();
-
 		$validation = Validator::make($request->all(), [
 			'noKad' => 'required|min:10',
 			'noKP'	=> 'required|size:12'
